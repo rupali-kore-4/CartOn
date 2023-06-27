@@ -12,7 +12,7 @@ export class SellerService {
 
   constructor(private http:HttpClient, private router:Router) { }
   userSignUp(data:signUp){
-    this.http.post('http://localhost:3000/seller',
+    this.http.post('https://json-d0te.onrender.com/seller',
     data,
     {observe:'response'}).subscribe((result)=>{
       console.warn(result)
@@ -29,7 +29,7 @@ export class SellerService {
     }
   }
   userLogin(data:login){
-   this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+   this.http.get(`https://json-d0te.onrender.com/seller?email=${data.email}&password=${data.password}`,
    {observe:'response'}).subscribe((result:any)=>{
     console.warn(result)
     if(result && result.body && result.body.length===1){
